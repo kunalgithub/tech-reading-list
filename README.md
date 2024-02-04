@@ -1,2 +1,4 @@
-# tech-reading-list
-My technical Reading List - blogs
+### My technical Reading List - blogs 
+## Started Feb-04-2023
+
+1. Overview of Java Profilers -  [ Java Profiles ](https://www.infoq.com/articles/open-source-java-profilers/)   
