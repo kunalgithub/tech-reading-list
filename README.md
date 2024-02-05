@@ -6,4 +6,4 @@
 
 
 ### Articles on Philoshy ( programming )
-1. The Law of Leaky Abstraction
+1. [ The Law of Leaky Abstraction ]()
