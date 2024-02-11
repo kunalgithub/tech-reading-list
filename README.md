@@ -16,7 +16,7 @@ You work on Linux , Mac - Tedious to Manage reading list !
 Github serves as one place where you can manage the reading list - **Although** Only if your personnel GitHuB opens in corporate Network.
 
 - [ Data Oriented Programming in Java ](https://youtu.be/Y2pmZlP-cOU?si=I13_iABTut93zCwv)
-- 
+- [ CPU Profiling ](https://www.dynatrace.com/news/blog/optimizing-java-xpath-cpu-and-memory-overhead/)
 
 
     
