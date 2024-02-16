@@ -18,5 +18,8 @@ Github serves as one place where you can manage the reading list - **Although** 
 - [ Data Oriented Programming in Java ](https://youtu.be/Y2pmZlP-cOU?si=I13_iABTut93zCwv)
 - [ CPU Profiling - Case Strudy ](https://www.dynatrace.com/news/blog/optimizing-java-xpath-cpu-and-memory-overhead/)
 
+### Mysql 
+  - [ Recommendations on Hosting MySQL on AWS EC2 Instances ](https://docs.aws.amazon.com/pdfs/whitepapers/latest/optimizing-mysql-on-ec2-using-amazon-ebs/optimizing-mysql-on-ec2-using-amazon-ebs.pdf#terminology)
+
 
     
