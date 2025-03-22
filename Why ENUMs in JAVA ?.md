@@ -1,4 +1,4 @@
-Why Enum Exists? 
+## Why Enum Exists? 
 
 Thought Experiment:  ENUM does not exist. So, could you write Java Code and know the implications? 
 
@@ -49,16 +49,65 @@ Modifying it to mimic Domain closely, I can re-write
 ```
 response.getAccounts()
          .steam()
-         .filter( account -> account.getType().equalsIgnoreCase(ACCOUNTS.SAVINGS)) //Psst
+         .filter( account -> account.getType().equalsIgnoreCase(ACCOUNTS.SAVINGS)) //Psst!
          .forEach(accont->System.out.println(Constants.ACCOUNTS.SAVINGS+"=>"+account))
 ```
 
-Conclusion #1: Nothing here much. 
+**Conclusion #1** : Nothing here much. 
 
-What if I want to know all the Account Types in my Project, So list all constants 
 
+`Business Scenario`: What if I want to know all the Account Types in my Project, So list all constants.
+ Print all the account types using the SAVINGS, CURRENT, and OVERDRAFT types.
+   
    ```
-     String[] ACCOUNT_TYPES = {ACCOUNTS.SAVINGS, ACCOUNTS.CURRENT, ACCOUNTS.FIXED_DEPOSIT};
+      String[] ACCOUNT_TYPES = {ACCOUNTS.SAVINGS, ACCOUNTS.CURRENT, ACCOUNTS.OVERDRAFT};
+     .steam()filter( account -> Arrays.asList(ACCOUNT_TYPES).contains(account.getType())) //Psst!
+     .forEach(accont->System.out.println(Constants.ACCOUNTS.SAVINGS+"=>"+account))
    ```
-Observation: Now the hard coding shows
-Conclusion #2: Something Odd? 
+**Observation**: Now, all the places where such business requirements must be fulfilled have hard coding involved. 
+Bring down the `Code Maintenancblity index`. [I do not know whether such an index is present ;) ] 
+
+**Conclusion #2**: Code Pattern brought about by such Language Specification makes Maintainence hard. 
+
+`Business Scenario`: Aggregate all the savings accounts from all the Verticals of the Business ( Line of Business ) 
+
+ Here is the flag that recognises the per LOB. 
+   - LOB_ALPHA - Have a flag for SAVINGS as "SAVINGS"
+   - LOB_BETA - Have a flag for SAVINGS as "015"
+
+I was hoping you wouldn't ask me why because different systems use different technologies for Storage. 
+
+I can write the code as 
+```
+ public class ACCOUNTS {
+     public static final Map<String,String> LOB_MAPPING = Map.of(LOB_ALPHA,ACCOUNT_TYPES,LOB_BETA,ACCOUNT_TYPES_BETA)
+  } 
+```
+You can debate the way code can be written in other forms. 
+
+**Conclusion #3**: We see that within the language construct, representing 
+- Representing Business Information becomes a hack. 
+- and Maintainability is time-consuming.  
+
+**Conclusion #4**: Languages Built for Enterprise should introduce a language construct to simplify the Business Information. 
+
+**Thought Experiment is over**
+
+----
+Let's look at the enum specification and check if we can find some mail archives on the Internet. 
+I will utilise **Grok3 Beta 22-March-2025** to find information faster with the Advent of GenAI. 
+
+**The below information is where information is sought through GenAI only**
+
+- ENUM was introduced in Java 5.0
+- Origins of the Enum Concept: The idea of enumerated types predates Java, with roots in languages like Pascal, which introduced them in the late 1960s and early 1970s to define named constants, though without the "enum" keyword. C later popularized the concept with the "enum" keyword for named integer constants. Java enhanced this idea in 2004, making enums full-fledged classes with additional features like methods and constructors.
+
+>> Type safety was a vital aspect I missed in my `Thought Experiment`.
+>> This means I looked at the code smells the Application Produces without Enum
+
+**Conclusion from Grok**
+
+```Java's ENUM is considered type-safe because it ensures that a variable can only hold one of the predefined constants declared within the enum```
+
+*** END OF STORY ** 
+
