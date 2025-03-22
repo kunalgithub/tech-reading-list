@@ -107,7 +107,25 @@ I will utilise **Grok3 Beta 22-March-2025** to find information faster with the 
 
 **Conclusion from Grok**
 
-```Java's ENUM is considered type-safe because it ensures that a variable can only hold one of the predefined constants declared within the enum```
+``` Java's ENUM is considered type-safe because it ensures that a variable can only hold one of the predefined constants declared within the enum```
+
+Additional Points from my side 
+
+  - Enterprise Software Life can be multi-year
+  - Software is maintained by people who move around
+  - Large code bases are maintenance-heavy and are suspectable to big bugs with small lines of change
+  - Code Review of such can become Error Prone.
+
+Grok suggested that the concept of enum was first introduced in PASCAL, and Grok concludes that 
+```
+In summary, Pascal introduced enumerated types to improve code readability, maintainability, and type safety.
+
+```
+**ENDING NOTE** 
+- While I was Right on some aspects, type safety was missed
+- It might have been missed as the bias would have come from the fact that the code would be reviewed at merge time.
+- If your day-to-day activity is coding, do you need a time when you can see things from a bird's eye view? 
+
 
 *** END OF STORY ** 
 
