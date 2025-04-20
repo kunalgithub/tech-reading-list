@@ -1,0 +1,29 @@
+# Understand the Java memory model
+
+Understand the Java Language Specification on JMM 
+
+## program order consistency 
+
+The `volatile` keyword 
+
+The variable is written in the main memory, not the thread's local memory. 
+Each write to the variable is visible to another Thread trying to read. 
+Thus, each Thread sees a consistent value of the variable.
+
+- So when a variable is declared `volatile`, memory operations will be executed in the same order as in the program text. 
+
+Given the program snippet from JLS 
+
+```
+class Test {
+1 static volatile int i = 0, j = 0;
+2 static void one() { i++; j++; }
+3 static void two() {
+4   System.out.println("i=" + i + " j=" + j);
+ }
+}
+```
+1. The memory operation `i++,j++` will appear in the same order as written in the `program text`. This guarantees that it is never `j>i`. 
+2. Notice that for method two, it's clear that it can produce inconsistent results. ???. For the simple reason that, between read of i and j, method one() could have been executed multiple times.
+
+
